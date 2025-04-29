@@ -9,3 +9,36 @@
     <p>דף זה נוצר באמצעות GitHub Pages.</p>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>המערכת החכמה שלי</title>
+    <link rel="stylesheet" href="styles/style.css"> <!-- קובץ עיצוב -->
+</head>
+<body>
+    <h1>🔹 מערכת AI חכמה 🔹</h1>
+    <p>מודול עיבוד שפה, מנוע AI, וממשק משתמש.</p>
+
+    <!-- ממשק משתמש -->
+    <div id="ui-container">
+        <input type="text" id="user-input" placeholder="כתוב משהו...">
+        <button onclick="processInput()">🔍 עיבוד</button>
+        <p id="result"></p>
+    </div>
+
+    <!-- טעינת קבצי JavaScript -->
+    <script src="core/ai_engine.js"></script>
+    <script src="nlp/nlp_module.js"></script>
+    <script src="graphics/ui_engine.js"></script>
+
+    <script>
+        function processInput() {
+            let input = document.getElementById("user-input").value;
+            let result = NLP.process(input);  // עיבוד שפה
+            document.getElementById("result").innerText = AI.analyze(result); // מנוע AI
+        }
+    </script>
+</body>
+</html>
