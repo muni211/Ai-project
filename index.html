@@ -42,3 +42,15 @@
     </script>
 </body>
 </html>
+<script>
+async function processInput() {
+    let input = document.getElementById("user-input").value;
+    let response = await fetch("http://localhost:5000/process", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: input })
+    });
+    let data = await response.json();
+    document.getElementById("result").innerText = data.response;
+}
+</script>
